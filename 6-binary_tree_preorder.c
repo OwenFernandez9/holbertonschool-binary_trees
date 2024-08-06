@@ -1,8 +1,8 @@
 #include "binary_trees.h"
 /**
- * print_num - Prints a number
- *
- * @n: Number to be printed
+ * binary_tree_preorder - function
+ * @tree: pointer
+ * @func: function
  */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
