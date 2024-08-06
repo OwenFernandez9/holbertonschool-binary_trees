@@ -3,14 +3,14 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_t -  function
+ * binary_tree_insert_left - function
  * @parent: pointer
  * @value: value
- * Return: 
+ * Return: leftnode
  */
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 {
-	binary_tree_t *leftnode, *temp = parent->left;
+	binary_tree_t *leftnode, *temp = NULL;
 
 	leftnode = malloc(sizeof(binary_tree_t));
 	if (leftnode == NULL)
@@ -21,6 +21,10 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	leftnode->right = NULL;
 	parent->left = leftnode;
 	leftnode->parent = parent;
+	if (parent != NULL)
+	{
+		temp = parent->left;
+	}
 	if (temp != NULL)
 	{
 		temp->parent = leftnode;
