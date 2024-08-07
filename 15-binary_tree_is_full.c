@@ -1,23 +1,25 @@
 #include "binary_trees.h"
 /**
- * binary_tree_size0 - function
+ * aux -function count nodes that don't work for me
+ * @tree: pointer
+ * Return: nodes that are not useful
  *
- * @tree: tree
- * Return: count
  */
-size_t binary_tree_size0(const binary_tree_t *tree)
+int aux(const binary_tree_t *tree)
 {
-	int count = 0;
+	int  count = 0;
 
 	if (tree == NULL)
 		return (0);
 
-	count += binary_tree_size(tree->right);
-	count += binary_tree_size(tree->left);
-	count += 1;
-
+	if (!tree->right != !tree->left)
+	{
+		count++;
+	}
+	count += aux(tree->right);
+	count += aux(tree->left);
+	
 	return (count);
-
 }
 /**
  * binary_tree_is_full - function
@@ -26,8 +28,14 @@ size_t binary_tree_size0(const binary_tree_t *tree)
  */
 int binary_tree_is_full(const binary_tree_t *tree)
 {
+	int result;
+
 	if (tree == NULL)
 		return (0);
 
-	
+	result = aux(tree);
+
+	if (result == 0)
+		return (1);
+	return (0);
 }
