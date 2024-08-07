@@ -68,7 +68,9 @@ int binary_tree_balance0(const binary_tree_t *tree)
 	return (height);
 }
 /**
- * binary_tree_is_perfect
+ * binary_tree_is_perfect - function
+ * @tree: tree
+ * Return: 1 is perfect or 0 not is perfect
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
