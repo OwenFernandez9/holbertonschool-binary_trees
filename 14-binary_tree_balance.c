@@ -1,6 +1,6 @@
 #include "binary_trees.h"
 /**
- * count - function to count recursively
+ * count0 - function to count recursively
  * @tree: tree
  * Return: amount of nodes
  */
@@ -18,7 +18,7 @@ size_t count0(const binary_tree_t *tree)
 	return (countl + 1);
 }
 /**
- * binary_tree_height - function
+ * binary_tree_height0 - function
  * @tree: tree
  * Return: amount of nodes
  */
