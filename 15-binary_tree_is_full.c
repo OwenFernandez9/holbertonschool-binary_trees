@@ -18,7 +18,7 @@ int aux(const binary_tree_t *tree)
 	}
 	count += aux(tree->right);
 	count += aux(tree->left);
-	
+
 	return (count);
 }
 /**
